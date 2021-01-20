@@ -1,0 +1,118 @@
+.container {
+    padding-right: -15px; 
+    padding-left: -15px;
+}
+
+.nameRoom > span,
+.green
+{
+    color: #004918;
+}
+
+.bold {
+    font-weight: 600;
+    color: black;
+}
+
+.container h2, 
+.nameRoom > span  {
+    font-weight: 700;
+}
+
+.container > div:not(:nth-child(1)) {
+    padding: 10px 0;
+}
+
+.nameRoom {
+    padding:20px 0 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    font-size: 10px;
+    padding-left: 5px;
+}
+
+.container img {
+    width: 100%;
+    height: 50%;
+}
+
+.green {
+    font-weight: 500;
+}
+
+.info  div{
+    padding-bottom: 10px;
+}
+
+.mess {
+    box-shadow: -1px 3px 0px 3px #f7f7f7;
+    padding: 10px;
+    display: block;
+    color: gray !important;
+    
+}
+
+.infoContact input{
+    box-shadow: 0px 1px 0px 2px #e6e6e6;
+    border: #ffff;
+    width: 50%;
+    display: inline-block;
+    height: 34px;
+    
+}
+
+.container :focus {
+    outline: none;
+}
+
+.bg {
+    text-align: center;
+    padding: 10px;
+    background-color: #ECECEC;
+}
+
+.order span, .order label, .order input {
+    color: red;
+}
+
+.infoContact span {
+    padding-bottom: 20px;
+    font-weight: 600;
+}
+
+.infoContact form {
+    margin-top: 10px;
+}
+
+.infoContact form > div {
+    padding-bottom: 7px;
+}
+
+.submit {
+    display: flex;  
+    justify-content: space-between;
+}
+
+.submit button {
+    border-radius: 5%;
+    border: none;
+    margin: 0.7rem 0.3rem;
+    padding: 0.6rem 4rem;
+}
+
+.submit button:nth-child(1) {
+    background-color: #ECECEC;
+    font-weight: 700;
+}
+.submit button:nth-child(2) {
+    background-color: #669274;
+    color: #ffff;
+    font-weight: 700;
+}
+
+.order div:nth-child(2) label{
+    padding-left: 5px;
+}
