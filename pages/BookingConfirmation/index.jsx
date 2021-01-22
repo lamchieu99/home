@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Modal, Button } from 'antd';
 import styles from './bookingConfirmation.module.css'
-import { StarOutlined, WarningOutlined } from '@ant-design/icons';
+import {
+    StarOutlined, WarningOutlined, TabletOutlined, WifiOutlined, SmileOutlined,
+    TeamOutlined, DesktopOutlined, CheckSquareOutlined, EnvironmentOutlined,
+    HomeOutlined, FormatPainterOutlined, GatewayOutlined, HeartOutlined
+}
+    from '@ant-design/icons';
 
 export default function Index() {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -23,8 +28,8 @@ export default function Index() {
             <Button type="primary" onClick={showModal} >
                 Open Modal
             </Button>
-            <Modal visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <h2 className={`${"text-center"} ${styles.green}`}>XÁC NHẬN ĐẶT PHÒNG</h2>
+            <Modal width="620px" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+                <h2 className={`${styles.green} ${styles.confirm}`}>XÁC NHẬN ĐẶT PHÒNG</h2>
                 <div className={styles.container}>
                     <div className={styles.nameRoom}>
                         <span>NAME ROOM</span>
@@ -36,12 +41,12 @@ export default function Index() {
                             <StarOutlined />
                         </div>
                     </div>
-                    <div className="infoRoom">
-                        <div className="row">
-                            <div className={`${"col-3"}`}>
+                    <div className={styles.infoRoom}>
+                        <div className={styles.row}>
+                            <div className={styles.col3}>
                                 <img src="https://danviet.mediacdn.vn/upload/3-2019/images/2019-09-09/5-ly-do-vi-sao-khong-nen-mua-xe-hoi-bang-gia-xe-o-to-moi-nhat-hom-nay-thang-1568002119-width800height450.jpg" alt="oto" />
                             </div>
-                            <div className={`${"col-9"} ${styles.info}`}>
+                            <div className={`${styles.col9} ${styles.info}`}>
                                 <div>
                                     <span className={styles.bold}>Thời gian đặt phòng</span> <br />
                                     <span className={styles.green}>Nhận phòng</span> 21:00 - 18/02/2020
@@ -61,113 +66,100 @@ export default function Index() {
                         </div>
                     </div>
                     <div className="convenient">
-                        <div className="row">
-                            <div className="col-3">
+                        <div className={styles.row}>
+                            <div className={styles.col3}>
                                 <span className={styles.bold}>Các tiện nghi</span>
                             </div>
-                            <div className="col-3">
-                                <span>Bàn làm việc</span> <br />
-                                <span>Máy sấy tóc</span> <br />
-                                <span>Minibar</span> <br />
-                                <span>Khu hút thuốc</span> <br />
+                            <div className={styles.col3}>
+                                <TabletOutlined className ={styles.padding} color={"#004918"} /><span>Bàn làm việc</span> <br />
+                                <FormatPainterOutlined className ={styles.padding} /><span>Máy sấy tóc</span> <br />
+                                <HomeOutlined className ={styles.padding} /><span>Minibar</span> <br />
+                                <CheckSquareOutlined className ={styles.padding} /><span>Khu hút thuốc</span> <br />
                             </div>
-                            <div className="col-3">
-                                <span>Phòng tắm vòi sen</span> <br />
-                                <span>TV</span> <br />
-                                <span>Wifi</span> <br />
+                            <div className={styles.col3}>
+                                <GatewayOutlined className ={styles.padding} /><span>Phòng tắm vòi sen</span> <br />
+                                <DesktopOutlined className ={styles.padding} /><span>TV</span> <br />
+                                <WifiOutlined className ={styles.padding} /><span>Wifi</span> <br />
                             </div>
-                            <div className="col-3">
-                                <span>Máy lạnh</span><br />
-                                <span>Phòng làm việc</span><br />
-                                <span>Phòng trẻ em</span><br />
+                            <div className={styles.col3}>
+                                <HeartOutlined className ={styles.padding} /><span>Máy lạnh</span><br />
+                                <TeamOutlined className ={styles.padding} /><span>Phòng làm việc</span><br />
+                                <SmileOutlined className ={styles.padding} /><span>Phòng trẻ em</span><br />
                             </div>
                         </div>
                     </div>
                     <div className="location">
-                        <div className="row">
-                            <div className="col-3">
+                        <div className={styles.row}>
+                            <div className={styles.col3}>
                                 <p className={styles.bold}>Vị trí xung quanh</p>
                             </div>
-                            <div className="col-5">
-                                <span>Bãi biễn Mỹ khê 0,88km</span> <br />
-                                <span>Lễ hội Diều Đà Nẵng 0,88km</span> <br />
+                            <div className={styles.col4}>
+                                <EnvironmentOutlined className ={styles.padding} /><span>Bãi biễn Mỹ khê 0,88km</span> <br />
+                                <EnvironmentOutlined className ={styles.padding} /><span>Lễ hội Diều Đà Nẵng 0,88km</span> <br />
                             </div>
-                            <div className="col-4">
-                                <span>Công viên Biển Đông  0,88km</span> <br />
-                                <span>Coconut Bar 0,88km</span> <br />
+                            <div className={styles.col5}>
+                                <EnvironmentOutlined className ={styles.padding} /><span>Công viên Biển Đông  0,88km</span> <br />
+                                <EnvironmentOutlined className ={styles.padding} /><span>Coconut Bar 0,88km</span> <br />
                             </div>
                         </div>
                     </div>
-                    <div className="price">
+                    <div className={styles.price}>
                         <span className={styles.bold}>Bảng giá</span>
-                        <div className="row">
-                            <div className="col-3">
-                                <span>Đơn giá thuê</span> <br />
-                            </div>
-                            <div className="col-5">
-                                <span>600 000VNĐ/ngày</span>
-                            </div>
-                            <div className="col-4">
-                                <div className={styles.bg}>
-                                    <span>TIỀN CỌC</span> <br />
-                                    <span className={styles.green}>200 000VNĐ</span> <br />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-3">
-                                <span>Phí dịch vụ khách sạn</span> <br />
-                            </div>
-                            <div className="col-5">
-                                <span>53550 VNĐ/ngày</span>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-3">
-                                <span>Tổng phí thuê xe</span> <br />
-                            </div>
-                            <div className="col-5">
-                                <span>600 000VNĐ/ngày</span>
-                            </div>
-                            <div className="col-4">
-                                <div className={styles.bg}>
-                                    <span>THANH TOÁN SAU CHO KHÁCH SẠN</span> <br />
-                                    <span className={styles.bold}>453 550VNĐ</span> <br />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-3">
-                                <span className={styles.bold}>TỔNG CỘNG</span> <br />
-                            </div>
-                            <div className="col-5">
-                                <span className={styles.bold}>653 550VNĐ</span>
-                            </div>
-                        </div>
+                        <table className={styles.col12}>
+                            <tr>
+                                <td className={styles.col3}>Đơn giá thuê</td>
+                                <td className={styles.col5}>600 000VNĐ/ngày</td>
+                                <td rowspan="2" className={styles.col4}>
+                                    <div className={styles.bg}>
+                                        <span>TIỀN CỌC</span> <br />
+                                        <span className={styles.green}>200 000VNĐ</span> <br />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className={styles.col3}>Phí dịch vụ khách sạn</td>
+                                <td className={styles.col5}>53550 VNĐ/ngày</td>
+                            </tr>
+                            <tr>
+                                <td className={styles.col3}>Tổng phí thuê xe</td>
+                                <td className={styles.col5}>600 000VNĐ/ngày</td>
+                                <td rowspan="2" className={styles.col4}>
+                                    <div className={styles.bg}>
+                                        THANH TOÁN SAU CHO KHÁCH SẠN<br />
+                                        <span className={styles.bold}>453 550VNĐ</span> <br />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className={styles.col3}><span className={styles.bold}>TỔNG CỘNG</span></td>
+                                <td className={styles.col5}><span className={styles.bold}>653 550VNĐ</span></td>
+                            </tr>
+
+                        </table>
                     </div>
                     <div className={styles.infoContact}>
                         <span>THÔNG TIN LIÊN HỆ </span>
                         <form action="" >
-                            <div className={styles.contact} className="row">
-                                <label className="col-3" htmlFor="">Tên người liên hệ</label>
+                            <div className={styles.contact} className={styles.row}>
+                                <label className={styles.col3} htmlFor="">Tên người liên hệ</label>
                                 <input type="text" className="form-control" />
                             </div>
-                            <div className={styles.contact} className="row">
-                                <label className="col-3" htmlFor="">Số điện thoại</label>
+                            <div className={styles.contact} className={styles.row}>
+                                <label className={styles.col3} htmlFor="">Số điện thoại</label>
                                 <input type="text" className="form-control" />
                             </div>
-                            <div className={styles.contact} className="row">
-                                <label className="col-3" htmlFor="">Email</label>
+                            <div className={styles.contact} className={styles.row}>
+                                <label className={styles.col3} htmlFor="">Email</label>
                                 <input type="email" className="form-control" />
                             </div>
-                            <div className={styles.contact} className="row">
-                                <label className="col-3" htmlFor="">Tên khách hàng</label>
+                            <div className={styles.contact} className={styles.row}>
+                                <label className={styles.col3} htmlFor="">Tên khách hàng</label>
                                 <input type="text" className="form-control" />
                             </div>
                         </form>
                     </div>
                     <div className={styles.order}>
-                        <div className="d-flex align-items-center">
+                        <div>
                             <WarningOutlined /><WarningOutlined className="pl-1" />
                             <span className="pl-1"> Đặt phòng này không áp dụng chính sách hủy phòng</span> <br />
                         </div>
@@ -180,8 +172,6 @@ export default function Index() {
                         </div>
                     </div>
                 </div>
-
-
             </Modal>
         </div>
     );

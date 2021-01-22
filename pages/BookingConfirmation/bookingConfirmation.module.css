@@ -1,8 +1,39 @@
-.container {
-    padding-right: -15px; 
-    padding-left: -15px;
+.row {
+    display: flex;
+    align-items: flex-start;
 }
 
+.col3 {
+    width: 25%;
+}
+
+.col3:nth-child(1) {
+    padding-right: 15px;
+}
+
+.col4 {
+    width: 33.333333%;
+}
+
+.col5 {
+    width: 41.6666%;
+}
+
+.col8 {
+    width: 66.666666%;
+}
+
+.col9 {
+    width: 75%;
+}
+
+.col12 {
+    width: 100%;
+}
+
+.padding {
+    padding-right: 1px;
+}
 .nameRoom > span,
 .green
 {
@@ -14,6 +45,9 @@
     color: black;
 }
 
+.confirm {
+    text-align: center;
+}
 .container h2, 
 .nameRoom > span  {
     font-weight: 700;
@@ -36,7 +70,7 @@
 
 .container img {
     width: 100%;
-    height: 50%;
+    height: 137px;
 }
 
 .green {
@@ -60,7 +94,7 @@
     border: #ffff;
     width: 50%;
     display: inline-block;
-    height: 34px;
+    height: 2rem;
     
 }
 
@@ -70,11 +104,19 @@
 
 .bg {
     text-align: center;
-    padding: 10px;
+    padding: 1px 3px ;
     background-color: #ECECEC;
 }
 
-.order span, .order label, .order input {
+.price table tr td:nth-child(2)  {
+    text-align: right;
+    padding-right: 6rem;
+}
+
+.order span, 
+.order label, 
+.order input,
+.infoContact span {
     color: red;
 }
 
